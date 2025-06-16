@@ -41,10 +41,6 @@ img{
 	height: auto;
 }
 
-button{
-	
-}
-
 @media only screen and (max-width: 1000px) {
   div.container {
 	width: 75%;
