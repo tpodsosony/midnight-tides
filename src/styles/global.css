@@ -6,7 +6,7 @@ div.container {
 	border-width: 2px;
 	margin:auto;
 	padding: 1%;
-	width: 45%;
+	width: 50%;
 	justify-content: center;
 	background-color:#0c0c0c;
 	font-family: Garamond, serif;
@@ -46,5 +46,9 @@ button{
 }
 
 @media only screen and (max-width: 1000px) {
-  
+  div.container {
+	width: 75%;
+	border-width: 0;
+	border: none;
+  }
 }

@@ -11,17 +11,17 @@ const { frontmatter } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Midnight Tides</title>
 	</head>
-<a class="goBack">Go back</a>
+<!-- <a class="goBack" href="#">Go back</a> -->
 
 <Layout>
-<p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-<p><em>{frontmatter.description}</em></p>
+<!-- <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p> -->
+<p>{frontmatter.description}</p>
 <a href={frontmatter.link}>Code</a>
 <div class="line-1"></div>
 
 
 <slot />
-</Layout>
+</Layout >
 
 <style>
     .line-1 {
@@ -39,7 +39,9 @@ const { frontmatter } = Astro.props;
 </style>
 
 <script>
-  const buttons = document.querySelectorAll('a.goBack');
+//   const buttons = document.querySelectorAll('a.goBack');
+const buttons = document.querySelectorAll('h4');
+
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
