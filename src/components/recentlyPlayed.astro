@@ -1,0 +1,72 @@
+---
+const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=talooosh&api_key=0c456030edb4eae6f4239cc3f0792eff&format=json";
+const response = await fetch(url);
+const data = await response.json();
+const recent = data.recenttracks.track[0];
+
+---
+<div>
+    <small>My last listened song:</small>
+    <div class = "lastTrack">
+        <img src = {recent.image[2]["#text"]} alt = "Album image of the song on spotify" width="75" height="75"/>
+        <div class = "song">
+            <div class = "trackName">{recent.name}</div>
+            <div class = "artistName">{recent.artist["#text"]}</div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .lastTrack{
+        margin: auto;
+        height: 75px;
+        width: 50%;
+        border: double;
+        align-items: center;
+        position: relative; 
+        display: flex;
+        border-color: rgba(0, 0, 255, 0.562);
+    }
+    .song{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .trackName{
+         font-size: 0.9em;
+         padding-right: 2em;
+         max-width: 90%;
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+    }
+    .artistName{
+        font-size: 0.6em;
+        margin-top: 0.8em;
+        padding-right: 2em
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+
+    }
+
+    img{
+        margin-right: 0.8em;
+    }
+
+    small{     
+    }
+
+    div{
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .lastTrack{
+            width: 80%;
+        }
+        
+    }
+</style>
