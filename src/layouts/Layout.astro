@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Sidebar from '../components/sidebar.astro';
 import Header from '../components/Header.astro';
 import Topnav from '../components/topnav.astro';
+import Buttons from '../components/buttons.astro';
 const {pageTitle} = Astro.props;
 ---
 <!doctype html>
@@ -21,6 +22,7 @@ const {pageTitle} = Astro.props;
 			<h4>{pageTitle}</h4>
 			<div class = "line-1"></div>
 			<slot />
+		<!-- <Buttons/> -->
 		</div>
 		<div class = side><Sidebar/></div>
 		
