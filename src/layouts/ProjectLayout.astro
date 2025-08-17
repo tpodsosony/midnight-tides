@@ -11,14 +11,10 @@ const { frontmatter } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Midnight Tides</title>
 	</head>
-<!-- <a class="goBack" href="#">Go back</a> -->
 
 <Layout>
 <!-- <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p> -->
-<p>{frontmatter.description}</p>
-<a href={frontmatter.link}>Code</a>
-<div class="line-1"></div>
-
+<!-- <p>{frontmatter.description}</p> -->
 
 <slot />
 </Layout >
