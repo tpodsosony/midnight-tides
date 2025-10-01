@@ -12,9 +12,9 @@ const { frontmatter } = Astro.props;
 		<title>Midnight Tides</title>
 	</head>
 
-<Layout>
+<Layout pageTitle = {frontmatter.title}>
 <!-- <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p> -->
-<!-- <p>{frontmatter.description}</p> -->
+<p>{frontmatter.title}</p>
 
 <slot />
 </Layout >
