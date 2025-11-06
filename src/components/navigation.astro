@@ -15,7 +15,9 @@ const { pathname } = Astro.url;
 
 <style>
     .active{
-        text-decoration: underline solid rgb(93, 3, 3);
+        background-color: rgb(34, 38, 87);
+        border-radius: 10px;
+        border:solid;
     }
     .nav-links{
         padding: 6px 8px 6px 16px;
@@ -32,7 +34,7 @@ const { pathname } = Astro.url;
         line-height: 40px;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1000000px) {
         .nav-links{
             display: flex;
             flex-direction: column;
