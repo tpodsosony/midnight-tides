@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Buttons from '../components/buttons.astro';
 const pageTitle = "Home";
 import RecentlyPlayed from '../components/recentlyPlayed.astro';
 export const prerender = false
@@ -8,15 +9,42 @@ export const prerender = false
 
 <Layout pageTitle = {pageTitle}>
 	<p>
-		Hello! This is Tal's website, where you can find out more about me and my coding projects.
-		This also will have personal use as a blog which I will periodically be updating.
+		I'm going to fuck around and have fun in my little corner here. 
 	</p>
 	<p>
 				
 		I've been enjoying exploring web rings in the process of making this website, and am taking inspiration from many
-		of those while I work on personalizing this website more!
+		of those while I work on personalizing this website. Something that struck out to me about my indie web deep dives is the self expression they all have.
+		I'm more than happy to show off a little of Mr. Tal here.
 	</p>
+
+	<p>
+		My current interests include:
+	</p>
+	<ul>
+		<li>
+			Malazan
+		</li>
+		<li>
+			Indie web rings
+		</li>
+		<li>
+			Films
+		</li>
+		<li>
+			Classic Lit
+		</li>
+		<li>
+			Boxing
+		</li>
+	</ul>
 
 	<RecentlyPlayed/>
 	
 </Layout>
+
+<style>
+	li{
+		text-decoration: none;
+	}
+</style>

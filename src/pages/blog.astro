@@ -8,12 +8,19 @@ const pageTitle = "Blogs";
 
 <Layout pageTitle = {pageTitle}>
 	<ul>
-      {allProjects.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+      {allProjects.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} tags={post.frontmatter.tags}/>)}
     </ul>
 </Layout>
 
 <style>
 	ul{
 		padding-inline-start: 0;
+		margin: 1rem auto;
+		padding: 1rem;
+		border: 1px;
+		text-align:left;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 	}
 </style>

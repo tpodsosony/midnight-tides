@@ -1,18 +1,26 @@
 ---
-const {title, url} = Astro.props;
+const {title, url, tags, description} = Astro.props;
 ---
 
-<li  class = "projectPost" >
+<li  class = "blogPost" >
     <a href = {url}>
-        ↣{title}
+        ↣ {title}
     </a>
+    <ul class="tag">
+        {tags.map((tag: string) => (
+      <li ># {tag}</li>
+    ))}
+    </ul>
+        
+    
+    
     
 </li>
 
 <style>
-    .projectPost {
+    .blogPost {
         display: flex;
-        flex-direction: row; 
+        flex-direction: column; 
         list-style-type: none;
         justify-content: space-between;
         padding: 0;
@@ -25,4 +33,18 @@ const {title, url} = Astro.props;
     .projectPost a:hover{
         color:rgb(8, 131, 90);
     }
+    .tag{
+        /* display: flex;
+        flex-direction: row; */
+        padding-left: 0;
+
+    }
+    .tag li{
+        display: inline;
+        padding-right: 1em;
+        font-size: 0.8em;
+        color:rgb(167, 34, 194);
+    }
+        
+
 </style>
