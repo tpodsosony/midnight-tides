@@ -3,9 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import BlogPost from '../components/blogPost.astro';
 import { getCollection } from 'astro:content';
 
-const allBlogs = Object.values(import.meta.glob('./blogs/*.mdx', { eager: true }));
 const blogs = await getCollection("blogs");
-// const sortedPosts = blogs.sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate));
+blogs.sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate));
 const pageTitle = "Blogs";
 ---
 

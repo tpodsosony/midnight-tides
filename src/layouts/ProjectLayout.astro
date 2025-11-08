@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
 
 <Layout pageTitle = {frontmatter.title}>
 <!-- <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p> -->
-
+<h1>{frontmatter.title}</h1>
 <slot />
 </Layout >
 
@@ -30,6 +30,10 @@ const { frontmatter } = Astro.props;
 	left:0;
 	margin-top: 20%;
 	margin-left: 20%;
+  }
+  h1{
+	margin: auto;
+	text-align: center;
   }
 </style>
 
