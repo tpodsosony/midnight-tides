@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BlogPost from '../components/blogPost.astro';
+import { getCollection } from 'astro:content';
 
-const allProjects = Object.values(import.meta.glob('./blogs/*.mdx', { eager: true }));
+const allBlogs = Object.values(import.meta.glob('./blogs/*.mdx', { eager: true }));
+const blogs = await getCollection("blogs");
+// const sortedPosts = blogs.sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate));
 const pageTitle = "Blogs";
 ---
 
 <Layout pageTitle = {pageTitle}>
 	<ul>
-      {allProjects.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} tags={post.frontmatter.tags}/>)}
+      {blogs.map((post) => <BlogPost url={`/blog/${post.id}/`} title={post.data.title} tags={post.data.tags}/>)}
     </ul>
 </Layout>
 
