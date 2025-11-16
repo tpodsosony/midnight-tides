@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+
+
+const {author, title, genre, rating, image} = Astro.props
+
+---
+
+<article class = "card">
+    <Image class = "cover" src = {image} alt = {title} height = 200 width = 100></Image>
+    <h2>{title}</h2>
+    <h4>{author}</h4>
+    <div>Genre(s): {genre}</div>
+    <div>Rating: {rating}</div>
+</article>
+
+<style>
+    .card{
+        border-style: double;
+        width: 40%;
+        padding: 0.5em;
+    }
+    .cover
+    {
+        float: left;
+        margin-right: 1em;
+    }
+
+    h2{
+        color:aquamarine;
+        margin: 0 1em 0.25em 1em;
+    }
+    h4{
+        margin-top: 0.25em ;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .card{
+            text-align: center;
+            margin: auto;
+        }
+        .cover{
+            float:none;
+            text-align: center;
+        }
+    }
+
+
+</style>

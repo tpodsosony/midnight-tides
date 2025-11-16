@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LogCard from '../components/logCard.astro';
+const pageTitle = "Reading Log";
+---
+
+<Layout pageTitle = {pageTitle}>
+    <div class = "log">
+        <LogCard title = "The Bonehunters"
+        author = "Steven Erikson"
+        rating = "★★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1399934281i/478951.jpg">
+    </LogCard>
+
+    
+        <LogCard title = "As I Lay Dying"
+        author = "William Faulkner"
+        rating = "★★★"
+        genre = "Fiction"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1757102388i/77013.jpg"></LogCard>
+
+        <LogCard title = "Midnight Tides"
+        author = "Steven Erikson"
+        rating = "★★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1366996057i/345299.jpg"></LogCard>
+
+         <LogCard title = "Black Company"
+        author = "Glen Cook"
+        rating = "★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1389929874i/140671.jpg"></LogCard>
+
+        <LogCard title = "House of Chains"
+        author = "Steven Erikson"
+        rating = "★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1548490548i/55398.jpg"></LogCard>
+
+        <LogCard title = "Remains of the Day"
+        author = "Kazuo Ishigoro"
+        rating = "★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1327128714i/28921.jpg"></LogCard>
+
+        <LogCard title = "Memories of Ice"
+        author = "Steven Erikson"
+        rating = "★★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1548497075i/175983.jpg"></LogCard>
+
+        <LogCard title = "Deadhouse Gates"
+        author = "Steven Erikson"
+        rating = "★★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1385272744i/55401.jpg"></LogCard>
+
+        <LogCard title = "Stoner"
+        author = "John Williams"
+        rating = "★★★★★"
+        genre = "Fiction"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1742326950i/166997.jpg"></LogCard>
+
+        <LogCard title = "House of Leaves"
+        author = "Mark Z. Danielewski"
+        rating = "★★★★"
+        genre = "Horror"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1403889034i/24800.jpg"></LogCard>
+
+        <LogCard title = "Gardens of the Moon"
+        author = "Steven Erikson"
+        rating = "★★★★"
+        genre = "Fantasy"
+        image = "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1548497031i/55399.jpg"></LogCard>
+    </div>
+    
+
+</Layout>
+
+<style>
+    .log{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3em;
+        margin: auto;
+    }
+
+    @media only screen and (max-width: 750px) {
+        .log{
+            flex-direction: column;
+            gap: 1em;
+
+        }
+        
+    }
+</style>
+
+    
