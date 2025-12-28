@@ -6,11 +6,11 @@ import  quote from '../assets/siteMapImages/quotes.jpg';
 <div class = "sitemap">
     <ul>
         <li>
-            <a href = '/quotes'>⤷Quotes</a>
+            <a href = '/quotes'>⤷ Quotes</a>
             
         </li>
         <li>
-            <a href = '/readingLog'>⤷Reading Log</a>
+            <a href = '/readingLog'>⤷ Reading Log</a>
         </li>
         
     </ul>
@@ -31,12 +31,26 @@ import  quote from '../assets/siteMapImages/quotes.jpg';
 
     li{
         list-style-type: none;
+        position: relative;
 
         border: solid;
         border-color: rgb(67, 142, 117);
         padding: 12px;
-        width: 280px;
+        /* width: 280px; */
+        width: 15em;
         height: 15px;
         margin: 5px;
+    }
+
+    li::before{
+        content: "ׂ 🫧";
+        font-size: 1.3em;
+        display: inline-block;
+        position: absolute;
+        left: -50px;
+    }
+
+    a{
+        text-decoration: wavy;
     }
 </style>
