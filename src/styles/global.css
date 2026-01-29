@@ -9,7 +9,7 @@ div.container {
 	width: 50%;
 	justify-content: center;
 	background-color:#0c0c0c;
-	font-family: Garamond, serif;
+	font-family: 'Pentiment_Printed', serif;
 	
 	
 }
@@ -51,4 +51,12 @@ blockquote{
 	border: none;
 	background-color: rgb(0, 0, 19);
   }
+}
+
+@font-face {
+  font-family: 'Pentiment_Printed';
+  src: url('/fonts/Pentiment_Printed.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
