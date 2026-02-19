@@ -1,0 +1,37 @@
+---
+const {title = "Test"} = Astro.props;
+---
+<article class = "card">
+    <h3>{title}</h3>
+    <hr/>
+        <slot/>
+    <hr/>
+</article>
+
+<style>
+    .card{
+        border-style: double;
+        width: 40%;
+        padding: 0.5em;
+        justify-content: center;
+        margin: auto;
+        width: 75%;
+    }
+    
+    .card h3{
+        text-align: center;
+    }
+    
+    hr::before{
+        content: '✦ ✧ ✦';
+        color:cyan;
+    }
+    
+    hr{
+        text-align: center;
+        justify-content: center;
+        border-style: none;
+    }
+    
+    
+</style>

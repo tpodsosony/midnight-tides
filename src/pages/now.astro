@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/card.astro";
+const pageTitle = "Interests";
+---
+
+<Layout pageTitle={pageTitle}>
+    <Card title = "General"> 
+        Currently feel as if I'm in a very turbulent part of my life. Struggling to find a job that doesn't leave me drained. Outside of that I am 
+        incredibly happy with my social life and my hobbies. A lot more doing things because they sound fun as opposed to being scared. Therapy has been 
+        helping me become who I want to be.
+    </Card>
+    
+    <br/>
+    
+    <Card title = "Media">
+        <ul>
+            <li>Playing Etrian Odyssey 2 Untold, Sly Cooper 2, and Pillars of Eternity 2</li>
+            <li>Reading New York Trilogy, and Malazan: Book of the Fallen</li>
+            <li>Watching Pluribus, and a bunch of Hong Kong action movies</li>
+        </ul>      
+    </Card>
+    
+    <br/>
+    
+    <Card title = "Projects">
+        <ul>
+            <li>Knititng a scarf</li>
+            <li>Creating a small music video</li>
+            <li>Poetry, primarily to learn and garner an appreciation for it!</li>
+        </ul>
+    </Card>
+    <br/>
+    <small>Last updated on February 19th, 2026.</small>
+</Layout>
+
+<style>
+    small{
+        float:right;
+    }
+</style>
