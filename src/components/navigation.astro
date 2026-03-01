@@ -6,7 +6,6 @@ const { pathname } = Astro.url;
     <ul>
         <li><a class={pathname.slice(1) === '' ? 'active' : ''} href="/">Home</a></li>
         <li><a class={pathname.includes('blog/') ? 'active' : ''} href="/blog/1">Blog</a></li>
-        <li><a class={pathname.slice(1) === 'links/' ? 'active' : ''} href="/links/">Links</a></li>
         <li><a class={pathname.slice(1) === 'interests/' ? 'active' : ''} href="/interests/">Interests</a></li>
         <li><a class={pathname.slice(1) === 'now/' ? 'active' : ''} href="/now/">Now</a></li>
     </ul>
