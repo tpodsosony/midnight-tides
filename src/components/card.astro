@@ -1,8 +1,6 @@
 ---
-const {title = "Test"} = Astro.props;
 ---
 <article class = "card">
-    <h3>{title}</h3>
     <hr/>
         <slot/>
     <hr/>
@@ -10,12 +8,11 @@ const {title = "Test"} = Astro.props;
 
 <style>
     .card{
-        border-style: double;
-        width: 40%;
+        /*border-style: double;*/
         padding: 0.5em;
         justify-content: center;
         margin: auto;
-        width: 75%;
+        /*width: 75%;*/
     }
     
     .card h3{
@@ -23,7 +20,7 @@ const {title = "Test"} = Astro.props;
     }
     
     hr::before{
-        content: '✦ ✧ ✦';
+        content: '✦ ✧ ✧ ✦';
         color:cyan;
     }
     

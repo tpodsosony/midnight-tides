@@ -5,30 +5,49 @@ const pageTitle = "Interests";
 ---
 
 <Layout pageTitle={pageTitle}>
-    <Card title = "General"> 
-        Going through a lot of thinking about where I am. I have things lined up for my future but it does feel like a lot of waiting around till that happens. Started being more proactive in
-        finding events to go to. Been volunteering a lot more recently! Continuing to meet lots of cool people :)!
-    </Card>
+    <div class = "opencards" > 
+        <details name = "General">
+            <summary>𓆩♡𓆪 What is generally going on in my life 𓆩♡𓆪</summary>
+            <Card title = "General"> 
+                Going through a lot of thinking about where I am. I have things lined up for my future but it does feel like a lot of waiting around till that happens. Started being more proactive in
+                finding events to go to. Been volunteering a lot more recently! Continuing to meet lots of cool people :)!
+            </Card>
+        </details>
+    </div> 
+    
+    
     
     <br/>
     
-    <Card title = "Media">
-        <ul>
-            <li>Playing Etrian Odyssey 2 Untold, Slay the Spire 2, and Ghost of Tsushima</li>
-            <li>Reading The Left Hand of Darkness and Malazan: Book of the Fallen</li>
-            <li>Thinking about Succession, watching D20.</li>
-        </ul>      
-    </Card>
+    <div class = "opencards"> 
+        <details name = "General">
+            <summary>≪ °❈° ≫ Current media interests ≪ °❈° ≫</summary>
+            <Card title = "Media">
+                <ul>
+                    <li>Playing Etrian Odyssey 2 Untold, Slay the Spire 2, and Ghost of Tsushima</li>
+                    <li>Reading The Left Hand of Darkness and Malazan: Book of the Fallen</li>
+                    <li>Thinking about Succession, watching D20.</li>
+                    <li>Board games with my buds</li>
+                </ul>      
+            </Card>
+        </details>
+    </div>
     
     <br/>
     
-    <Card title = "Projects">
-        <ul>
-            <li>Knititng a scarf</li>
-            <li>Creating a small music video</li>
-            <li>Poetry, primarily to learn and garner an appreciation for it!</li>
-        </ul>
-    </Card>
+    <div class = "opencards" > 
+        <details name = "General">
+            <summary>✮✮✮ Current projects in the works ✮✮✮</summary>
+            <Card title = "Projects">
+                <ul>
+                    <li>Knititng a scarf</li>
+                    <li>Creating a small music video</li>
+                    <li>Making poetry</li>
+                </ul>
+        </Card>
+        </details>
+    </div>
+    
     <br/>
     <small>Last updated on March 22nd, 2026.</small>
 </Layout>
@@ -36,5 +55,23 @@ const pageTitle = "Interests";
 <style>
     small{
         float:right;
+    }
+    
+    .opencards{
+        border-style:ridge;
+        margin:auto;
+        width: 400px;
+        padding: 1em;
+        border-color: #F1E5A4;
+        
+    }
+    
+    .opencards summary{
+        text-align:left;
+    }
+    
+    ul{
+        padding-left: 1em;
+        margin:0;
     }
 </style>
