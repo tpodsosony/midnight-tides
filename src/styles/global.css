@@ -1,3 +1,5 @@
+
+
 div.container {
 
 	border-radius: 5px;
@@ -8,7 +10,7 @@ div.container {
 	padding: 1%;
 	width: 50%;
 	justify-content: center;
-	background-color:#0c0c0c;
+	background-color:#28243d;
 	font-family: 'Pentiment_Printed', serif;
 	font-size: 13px;
 	
@@ -16,7 +18,8 @@ div.container {
 }
 
 body{
-	background-color: rgb(0, 0, 19);
+    /*background-image: url("C:\Coding\Tal Website\src\assets\backgrounds\moroccan-flower-dark.jpg");*/
+	background-color:rgb(30, 34, 45);
 	color: rgb(236, 236, 236);
 	
 }
@@ -52,7 +55,7 @@ blockquote{
 	width: 90%;
 	border-width: 0;
 	border: none;
-	background-color: rgb(0, 0, 19);
+	background-color: rgb(45, 45, 54);
   }
 }
 
