@@ -14,5 +14,13 @@ const blogs = defineCollection({
 //     author: z.string()
   });
 
+const poems = defineCollection({
+  loader: glob ({ pattern: '**/*.mdx', base: './src/poems' }),
+});
+
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = {'blogs': blogs};
+export const collections =
+{
+  blogs,
+  poems
+};

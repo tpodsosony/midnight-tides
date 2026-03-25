@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/blogPost.astro';
+import { getCollection } from 'astro:content';
+
+const poems = await getCollection("poems");
+const pageTitle = "Poetry";
+---
+
+<Layout pageTitle = {pageTitle}>
+	<ul>
+      {poems.map((post) => <BlogPost url={`/poetry/${post.id}/`} title={post.data.title} tags={post.data.tags}/>)}
+    </ul>
+</Layout>
+
+<style>
+	ul{
+		padding-inline-start: 0;
+		margin: 1rem auto;
+		padding: 1rem;
+		border: 1px;
+		text-align:left;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+</style>
