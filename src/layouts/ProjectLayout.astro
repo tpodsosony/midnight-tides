@@ -1,23 +1,22 @@
 ---
-import Layout from './Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 
-const { frontmatter } = Astro.props;
+import Layout from './Layout.astro';
+import TableOfContents from '../components/tableOfContents.astro';
+
+type Props = CollectionEntry<'blogs'>['data'] & { headings: MarkdownHeading[] };
+
+const { frontmatter, headings } = Astro.props;
 ---
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Midnight Tides</title>
-	</head>
+
 
 <Layout pageTitle = {frontmatter.title}>
 
-<h1>{frontmatter.title}</h1>
-<p class = pubDate>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-
-<slot />
+    <h1>{frontmatter.title}</h1>
+    <p class = pubDate>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+    <TableOfContents headings = {headings} />
+    <slot />
 </Layout >
 
 <style>

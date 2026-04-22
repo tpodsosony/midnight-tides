@@ -1,0 +1,27 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props{
+  headings: MarkdownHeading[];
+}
+
+const{ headings } = Astro.props;
+
+var visible = false;
+if (headings.length > 0)
+  visible = true;
+const filteredHeadings = headings.filter((heading) => heading.depth <= 2);
+
+---
+<nav>
+    {visible && <h4>Table of Contents<h4> }
+    <ol>
+        {
+          headings.map((heading) => (
+          <li>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+          </li>
+          ))
+        }
+    </ol>
+</nav>
