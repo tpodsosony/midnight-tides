@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ListLayout from '../layouts/ListLayout.astro';
 import LogCard from '../components/logCard.astro';
 const pageTitle = "Reading Log";
 ---
 
-<Layout pageTitle = {pageTitle}>
+<ListLayout pageTitle = {pageTitle}>
     <div class = "log">
         <LogCard title = "The Bonehunters"
         author = "Steven Erikson"
@@ -76,14 +77,15 @@ const pageTitle = "Reading Log";
     </div>
     
 
-</Layout>
+</ListLayout>
 
 <style>
     .log{
         display: flex;
         flex-wrap: wrap;
-        gap: 3em;
+        gap: 2em;
         margin: auto;
+        justify-content: center;
     }
 
     @media only screen and (max-width: 750px) {

@@ -17,7 +17,7 @@ const {author, title, genre, rating, image} = Astro.props
 <style>
     .card{
         border-style: double;
-        width: 40%;
+        width: 25%;
         padding: 0.5em;
     }
     .cover
@@ -34,10 +34,11 @@ const {author, title, genre, rating, image} = Astro.props
         margin-top: 0.25em ;
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 750px) {
         .card{
             text-align: center;
             margin: auto;
+            width: 50%;
         }
         .cover{
             float:none;

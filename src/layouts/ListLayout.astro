@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Topnav from '../components/topnav.astro';
+import Social from '../components/social.astro';
+
+const {pageTitle} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header/>
+		<Topnav/>
+			<!-- <h4>{pageTitle}</h4>
+			<div class = "line-1"></div> -->
+			<slot />
+		<!-- <Buttons/> -->
+		<Social/>
+		
+	</body>
+	
+</html>
+
+<style>
+	h4{
+		text-align: center;
+	}
+
+	
+</style>
