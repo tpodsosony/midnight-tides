@@ -1,0 +1,36 @@
+---
+const { message = 'Hee-Ho!'} = Astro.props;
+---
+
+<!-- Store the message prop as a data attribute. -->
+<slow-text data-message={message}>
+  <button>The frosty one calls...</button>
+</slow-text>
+<p id = 'target'></p>
+
+
+<script>
+  
+
+  class SlowText extends HTMLElement {
+    connectedCallback() {
+      var curr = 0;
+      var message = this.dataset.message || "Undefined";
+
+      var Write = function write(){
+          var elem = document.getElementById('target');
+          elem.textContent += message.charAt(curr);
+          curr++;
+          if (curr < message.length)
+              window.setTimeout(write, 50);
+      };
+      // Read the message from the data attribute.
+      const button = this.querySelector('button');
+      button?.addEventListener('click', () => {
+        Write();
+      });
+    }
+  }
+
+  customElements.define('slow-text', SlowText);
+</script>
