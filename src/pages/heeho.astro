@@ -22,12 +22,14 @@ const dialogueFistbump = ["fistbump", "no"];
     <div class = "container">
         <img src={JackFrost.src} alt = "this is an image" class = "jfGif"></>
         </br>
-        <SlowText message = "I've been mea-hee-ning to get to know you better! Put 'er there, ho! "/>
+        <div class ="textBox">
+            <SlowText message = "I've been mea-hee-ning to get to know you better! Put 'er there, ho! "/>
+            <SlowText message = "(You shook hands with the demon... A piece of paper was left in your hand. It says, 'Sucker!') ", id= "heeho!", targetid = {dialogueFistbump[0]}/>
+            <SlowText message = "Do you have a heart of stone or something? Who wouldn't wanna shake hands with me, ho!? Maybe this will get you to open up, ho.", id = "tags", targetid = {dialogueFistbump[1]}/>
+        </div>
         <DialogueButton buttonTxt = 'Sure', id = {dialogueFistbump[0]}>
-          <SlowText message = "(You shook hands with the demon... A piece of paper was left in your hand. It says, 'Sucker!') ", id= "heeho!", targetid = {dialogueFistbump[0]}/>
         </DialogueButton>
         <DialogueButton buttonTxt = 'Let&apos;s not.', id = {dialogueFistbump[1]}>
-            <SlowText message = "Do you have a heart of stone or something? Who wouldn't wanna shake hands with me, ho!? Maybe this will get you to open up, ho.", id = "tags", targetid = {dialogueFistbump[1]}/>
         </DialogueButton>
 
     </div>
@@ -36,9 +38,12 @@ const dialogueFistbump = ["fistbump", "no"];
 <script>
 function hideDialogue() {
     var options = document.querySelectorAll('.button');
-  options.forEach(options => {
+    options.forEach(options => {
           options.style.display = 'none';
       });
+    var text = document.getElementById('Undefined');
+    text.style.display = 'none';
+    
 }
 
 let elements = document.querySelectorAll('.button');
@@ -62,6 +67,15 @@ elements.forEach((item) => {
     }
     .container{
         text-align: center;
+    }
+    .textBox{
+        text-align: left;
+        border: solid;
+        border-color: white;
+        width: 70%;
+        height: 4em;
+        margin: auto;
+        margin-bottom: 1em;
     }
 
 </style>
