@@ -42,7 +42,7 @@ function hideDialogue() {
           options.style.display = 'none';
       });
     var text = document.getElementById('Undefined');
-    text.style.display = 'none';
+    text.remove();
     
 }
 
@@ -51,6 +51,10 @@ let elements = document.querySelectorAll('.button');
 elements.forEach((item) => {
     item.addEventListener('click', () => {
       hideDialogue();
+      if (item == elements[0])
+        setTimeout('location.assign("/blog/1")', 6000);
+      if (item == elements[1])
+        setTimeout('location.assign("/jackfrost")', 6000);
     })
 });
 </script>
@@ -59,6 +63,20 @@ elements.forEach((item) => {
     body{
         background-image: url(../assets/backgrounds/jackfrostbackground.jpg);
         background-size: cover;
+    }
+
+    div.container {
+    
+	border-radius: 5px;
+	border: solid;
+	border-color: rgba(232, 42, 211, 0.54);
+	border-width: 2px;
+	margin:auto;
+	padding: 1%;
+	width: 50%;
+        color:antiquewhite;
+	justify-content: center;
+	background-color:#28243d;
     }
 
     img{
@@ -77,5 +95,16 @@ elements.forEach((item) => {
         margin: auto;
         margin-bottom: 1em;
     }
+
+    @media only screen and (max-width: 1000px) {
+    .textBox {
+            width: 100%;
+            height: 8em;
+    }
+    .container{
+        padding:3em;
+    }
+    }
+        
 
 </style>
