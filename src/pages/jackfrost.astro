@@ -1,5 +1,8 @@
 ---
 import '../styles/jackfrost.css';
+import SMT5JackFrost from '../assets/jackFrost/JackFrostSMT5Model.png';
+import MT2JackFrost from '../assets/jackFrost/JackFrostMT2.png';
+import { Image } from 'astro:assets';
 ---
 
 <!doctype html>
@@ -12,11 +15,27 @@ import '../styles/jackfrost.css';
 		<title>Hee-Ho!</title>
 	</head>
 	<body>
+	<header>
+	    <h1>𝕵𝖆𝖈𝖐 𝕱𝖗𝖔𝖘𝖙 </h1>
+	</header>
 	<div class='container'>
-		<p>salutations is tihs text corret</p>
+	    <Image src = {SMT5JackFrost} alt = 'Jack Frosts SMT5 model' width=250 height=250 class = "smt5jf"/>
+		<blockquote>"This time of Year being Cold and Frosty generally speaking, or when Jack-Frost commonly takes us by the Nose."</blockquote>
+		<p> -Round about our Coal Fire: or Christmas Entertainments, 1732</p>
+		<p>Born as a spirit to justify the pinch in ones cheek in the winter, Jack Frost has been in Anglo-Saxon folk lore since at least 1732 although likely for much longer.
+		</p>
+		<p>Jack Frost's origins described him as a man, completely different than the adorable spire you see above. It wasn't until the late 19th centure that a sprite like shape
+		began to form around him and patterns in frozen windows gained meaning.</p>
+
+		<p>He has appeared in many a media, often in stories revoling around Christmas, as a trickster in the winter. Sometimes associated with fall leaves, often a reason for all 
+		negative factors of winter.</p>
+		<Image src = {MT2JackFrost} alt = 'Jack Frosts SMT5 model' width=250 height=250 class = "smt5jf"/>
+
+		
+		
 	</div>
 	</body>
-
+</html>
 <style>
 body{
     background-image: url(../assets/jackFrost/jfBackground.png);
@@ -30,10 +49,40 @@ div.container {
 	border-color:rgba(82, 80, 85);
 	border-width: 2px;
 	margin:auto;
+	margin-top: 0;
 	padding: 1%;
 	width: 50%;
     color:#cbced5;
 	justify-content: center;
 	background-color:rgba(25, 29, 188);
+}
+
+.smt5jf{
+    float:right;
+    position:relative;
+    
+}
+header{
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    height: 6.5em;
+}
+
+h1{
+    /*padding: 150px 20px;*/
+    font-size: 72px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow:
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000,
+            -3px 0px 0 #000,
+            3px 0px 0 #000,
+            0px -3px 0 #000,
+            0px 3px 0 #000;
 }
 </style>
