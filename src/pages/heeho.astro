@@ -20,8 +20,8 @@ const dialogueFistbump = ["fistbump", "no"];
 	
 <body>
     <div class = "container">
-        <img src={JackFrost.src} alt = "this is an image" class = "jfGif"></>
-        </br>
+        <img src={JackFrost.src} alt = "this is an image" class = "jfGif"/>
+        <br/>
         <div class ="textBox">
             <SlowText message = "I've been mea-hee-ning to get to know you better! Put 'er there, ho! "/>
             <SlowText message = "(You shook hands with the demon... A piece of paper was left in your hand. It says, 'Sucker!') ", id= "heeho!", targetid = {dialogueFistbump[0]}/>
@@ -54,7 +54,12 @@ elements.forEach((item) => {
       if (item == elements[0])
         setTimeout('location.assign("/blog/1")', 6000);
       if (item == elements[1])
-        setTimeout('location.assign("/jackfrost")', 6000);
+      {
+        var text = document.getElementById('fistbump');
+        text.remove();
+        setTimeout('location.assign("/jackfrost")', 6000);     
+      }
+        
     })
 });
 </script>
@@ -101,10 +106,11 @@ elements.forEach((item) => {
             width: 100%;
             height: 8em;
     }
-    .container{
-        padding:3em;
+    div.container{
+        width: 85%;
     }
     }
         
 
 </style>
+</html>

@@ -2,7 +2,12 @@
 import '../styles/jackfrost.css';
 import SMT5JackFrost from '../assets/jackFrost/JackFrostSMT5Model.png';
 import MT2JackFrost from '../assets/jackFrost/JackFrostMT2.png';
+import RaihoGif from '../assets/jackFrost/RaihoSpin.gif';
+import JFTrue from '../assets/jackFrost/JFTrue.gif';
+import NahoUlt from '../assets/jackFrost/nahobeehoUlt.gif';
+import Heehoing from '../assets/jackFrost/DemoneeHoSilly.png';
 import { Image } from 'astro:assets';
+import  FrostDetails from '../components/frostDetails.astro';
 ---
 
 <!doctype html>
@@ -20,8 +25,11 @@ import { Image } from 'astro:assets';
 	</header>
 	<div class='container'>
 	    <Image src = {SMT5JackFrost} alt = 'Jack Frosts SMT5 model' width=250 height=250 class = "smt5jf"/>
-		<blockquote>"This time of Year being Cold and Frosty generally speaking, or when Jack-Frost commonly takes us by the Nose."</blockquote>
-		<p> -Round about our Coal Fire: or Christmas Entertainments, 1732</p>
+		<div class ='quote'>
+            <blockquote>"This time of Year being Cold and Frosty generally speaking, or when Jack-Frost commonly takes us by the Nose."</blockquote>
+            <li>Round about our Coal Fire: or Christmas Entertainments, 1732</li>
+		</div>
+		
 		<p>Born as a spirit to justify the pinch in ones cheek in the winter, Jack Frost has been in Anglo-Saxon folk lore since at least 1732 although likely for much longer.
 		</p>
 		<p>Jack Frost's origins described him as a man, completely different than the adorable spire you see above. It wasn't until the late 19th centure that a sprite like shape
@@ -34,6 +42,52 @@ import { Image } from 'astro:assets';
 		
 		
 	</div>
+	<br/>
+	<div class = 'container'>
+	    <div class ='quote'>
+					<blockquote>"I don't give a hee-ho!"</blockquote>
+	    </div>
+		<p>Jack frost has had many a from in SMT. Starting off as a humble snowman in Megami Tensei 2 before his iconic design got added in SMT1.</p>
+		<p> I'll briefly list the ones I like in a list here, but bear with me there is a lot of (justified) Jack Frost forms!</p>
+		<div class = 'gallery'>
+            <FrostDetails imagePath="/src/assets/jackFrost/JackoLantern.png", altText="Jack-o-Lantern", name = "JackLantern", titleColor = "red">
+		    Finding his origins in Megami Tensei 2 as well, this Frost is probably the least frost of them all, instead finding his origins
+            </FrostDetails>
+            <FrostDetails imagePath="/src/assets/jackFrost/nahobeeho.png", altText="Nahobeeho!", name = "Nahobeeho", titleColor = "red">
+		    Finding his origins in Megami Tensei 2 as well, this Frost is probably the least frost of them all, instead finding his origins
+            </FrostDetails>
+		</div>
+		
+		
+	</div>
+
+	<br/>
+	<div class = 'container'>
+	    <h2>Why I think he is swell</h2>
+		<figure>
+		    <Image src ={Heehoing} alt = 'The hee-hoing fairy godmother' class = "demoneeho"/> 
+			<figcaption>Demonee-ho quoting Gunnery Sergeant Hartman from Full Metal Jacket</figcaption>
+		</figure>
+					
+		<p> Jack Frost got to me almost instantly recently when I played SMT5 for the first time. I got a glimpse of Nahobeeho at some point, and seeing the earnestness of the costume
+		got to me. Jack Frost is not a weak soul. His conviction to being a little shit is so admirable. The art of him I see online. His beautiful smile. And the stupid hee-ho puns that
+		his dialogue consists of gets me evheery time, ho! Hee-ho is this adorable phrase that gets funnier the more unhinged the Frosts dialogue. One of my personal favourite's comes from
+		SMT4's challege quests with Demonee-ho leading, in which the fairy says Replacing 'fuck' with 
+		'hee-ho' might be the funniest thing anyones ever done.</p>
+		
+	</div>
+	
+	<br/>
+	<div class = 'container'>
+	    <h2>Some cool Jack Frost Gifs!!</h2>
+        <div class = 'gallery'>
+    	    <Image src = {RaihoGif} alt ='Raiho spinning' class = 'galleryImg'/>
+    		<Image src = {JFTrue} alt = 'Jack Frost with the word true over him' class = 'galleryImg'/>
+    		<Image src = {NahoUlt} alt = 'Nahobeeho unique ability' class = 'galleryImg'/>
+    	</div>
+	</div>
+
+	
 	</body>
 </html>
 <style>
@@ -51,10 +105,37 @@ div.container {
 	margin:auto;
 	margin-top: 0;
 	padding: 1%;
-	width: 50%;
+	width: 70%;
     color:#cbced5;
 	justify-content: center;
 	background-color:rgba(25, 29, 188);
+	cursor: url('../assets/jackFrost/cursor.cur'), default;
+
+}
+
+div.gallery{
+
+    display:flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+figure {
+  border: thin silver solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  width: 14em;
+  margin: auto;
+  float:left;
+  margin-right: 1em;
+}
+
+figcaption {
+  background-color: #222222;
+  color: white;
+  text-wrap: wrap;
+  font-size: 0.8em;
 }
 
 .smt5jf{
@@ -62,6 +143,13 @@ div.container {
     position:relative;
     
 }
+
+.galleryImg{
+    width:15em;
+    height: 250px;
+    border: thick double whitesmoke;
+}
+
 header{
     margin:auto;
     justify-content: center;
@@ -84,5 +172,26 @@ h1{
             3px 0px 0 #000,
             0px -3px 0 #000,
             0px 3px 0 #000;
+}
+
+div.quote{
+    background: darkslateblue;
+    display: flex;
+    flex-direction: column;
+    border: thick double black;
+    min-width: 15em;
+}
+
+div.quote li{
+    list-style-type:square;
+    margin-left:auto;
+    font-size: 0.8em;
+}
+
+.demoneeho
+{
+    width:14em;
+    height: 150px;
+    
 }
 </style>
