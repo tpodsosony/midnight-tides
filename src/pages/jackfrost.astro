@@ -8,6 +8,7 @@ import NahoUlt from '../assets/jackFrost/nahobeehoUlt.gif';
 import Heehoing from '../assets/jackFrost/DemoneeHoSilly.png';
 import { Image } from 'astro:assets';
 import  FrostDetails from '../components/frostDetails.astro';
+import MerchantJack from '../assets/jackFrost/MerchantFrost.png';
 ---
 
 <!doctype html>
@@ -37,7 +38,7 @@ import  FrostDetails from '../components/frostDetails.astro';
 
 		<p>He has appeared in many a media, often in stories revoling around Christmas, as a trickster in the winter. Sometimes associated with fall leaves, often a reason for all 
 		negative factors of winter.</p>
-		<Image src = {MT2JackFrost} alt = 'Jack Frosts SMT5 model' width=250 height=250 class = "smt5jf"/>
+		<Image src = {MT2JackFrost} alt = 'Jack Frosts original model' width=250 height=250 class = "smt5jf"/>
 
 		
 		
@@ -50,13 +51,42 @@ import  FrostDetails from '../components/frostDetails.astro';
 		<p>Jack frost has had many a from in SMT. Starting off as a humble snowman in Megami Tensei 2 before his iconic design got added in SMT1.</p>
 		<p> I'll briefly list the ones I like in a list here, but bear with me there is a lot of (justified) Jack Frost forms!</p>
 		<div class = 'gallery'>
-            <FrostDetails imagePath="/src/assets/jackFrost/JackoLantern.png", altText="Jack-o-Lantern", name = "JackLantern", titleColor = "red">
-		    Finding his origins in Megami Tensei 2 as well, this Frost is probably the least frost of them all, instead finding his origins
+            <FrostDetails imagePath="/src/assets/jackFrost/JackoLantern.png", altText="Jack-o-Lantern", name = "Jack-o Lantern", titleColor = "red">
+            Finding his origins in Megami Tensei 2 as well, this Frost is the least frosty there is. He is based on the Irish folklore tale of Stingy Jack. Haunting turnips initially before
+            North American culture adapted him into pumpkins.
             </FrostDetails>
             <FrostDetails imagePath="/src/assets/jackFrost/nahobeeho.png", altText="Nahobeeho!", name = "Nahobeeho", titleColor = "red">
-		    Finding his origins in Megami Tensei 2 as well, this Frost is probably the least frost of them all, instead finding his origins
+                A Frost enamored with the Nahobino of SMT5. In the quest of becoming a Nahobino, this demon rejects the title and instead find his own path as a 
+                'Nahobeeho'.
             </FrostDetails>
+            <FrostDetails imagePath="/src/assets/jackFrost/Raiho.png", altText="Raiho", name = "Raiho">
+                Raidou Kuzunoha's hee-est fan, our detective Jack Frost comes from the fusion of the demon with a Bancho uniform. 
+            </FrostDetails>
+            <FrostDetails imagePath="/src/assets/jackFrost/BlackFrost.png", altText="Black Frost", name = "Black Frost">
+                <div class ='quote'>
+                          <blockquote>"I'm a super rad, super bad Frost that's mastered the way of hee-vil, ho! "</blockquote>
+                </div>
+                A Frost that grew in size and power, tranforming into the evil version of our favourite prankster.
+
+            </FrostDetails>
+            <FrostDetails imagePath="/src/assets/jackFrost/KingFrost.png", altText="King Frost", name = "King Frost">
+                <div class ='quote'>
+                          <blockquote>"And you're a regular plebei-hee-an, ho!
+                          Tell me... Shall I make you rich, ho? "</blockquote>
+                </div>  
+                Finding his call in royalty, this frost doesn't beat around the bush when it comes naively trying to establish his rule.
+            </FrostDetails>
+            <FrostDetails imagePath="/src/assets/jackFrost/FrostAce.png", altText="Frost Ace", name = "Frost Ace">
+                To become a hero one often has to go through hardships. This Frost isn't sure what hardships he went through but he dons the mask to protect others. The hero no one wants or needs!
+            </FrostDetails>
+
+            <figure>
+                <Image src ={MerchantJack} alt = 'The hee-hoing fairy godmother' class = "demoneeho"/> 
+                <figcaption>Starting a business venture.</figcaption>
+            </figure>
 		</div>
+
+		
 		
 		
 	</div>
@@ -179,7 +209,6 @@ div.quote{
     display: flex;
     flex-direction: column;
     border: thick double black;
-    min-width: 15em;
 }
 
 div.quote li{
@@ -193,5 +222,31 @@ div.quote li{
     width:14em;
     height: 150px;
     
+}
+
+@media only screen and (max-width: 1000px) {
+
+div.container{
+    width: 90%;
+}
+
+div.gallery{
+
+    justify-content: center;
+}
+
+figure{
+    width: 90%;
+}
+
+div.quote{
+    float:inline-end;
+}
+
+.smt5jf{
+    display:block;
+    margin:auto;
+    float:none;
+    }
 }
 </style>

@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 const pageTitle = "Home";
 import RecentlyPlayed from '../components/recentlyPlayed.astro';
+import { Image } from 'astro:assets';
+import icon from '../assets/jackFrost/icon.png';
 export const prerender = false
 ---
 
@@ -41,12 +43,20 @@ export const prerender = false
 		</li>
 	</ul>
 
+	<a href = '/heeho' class = "hiddenLink"> <Image src = {icon} alt = "JF" height = "50" width = "50" /></a>
+
 	<RecentlyPlayed/>
+
 	
 </Layout>
+
 
 <style>
 	li{
 		text-decoration: none;
+	}
+
+	.hiddenLink{
+	    float:right;
 	}
 </style>
