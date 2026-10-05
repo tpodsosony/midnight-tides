@@ -1,12 +1,13 @@
 ---
-const { message = 'Hee-Ho!'} = Astro.props;
+const { message = 'Hee-Ho!', id = 'Undefined', targetid = 'Undefined', dialogueClass = 'Undefined', ...rest} = Astro.props;
+import '../styles/jackfrost.css';
+
 ---
 
 <!-- Store the message prop as a data attribute. -->
-<slow-text data-message={message}>
-  <button>The frosty one calls...</button>
+<slow-text data-message={message} data-id={id} data-targetid = {targetid} data-dialogueClass = {dialogueClass} >
 </slow-text>
-<p id = 'target'></p>
+<p id = {id} class = {dialogueClass} {...rest}></p>
 
 
 <script>
@@ -16,21 +17,54 @@ const { message = 'Hee-Ho!'} = Astro.props;
     connectedCallback() {
       var curr = 0;
       var message = this.dataset.message || "Undefined";
+      var id = this.dataset.id || "Undefined";
+      var targetid = this.dataset.targetid || "Undefined";
 
       var Write = function write(){
-          var elem = document.getElementById('target');
+          var elem = document.getElementById(id);
+          elem.style.display = 'inline';
           elem.textContent += message.charAt(curr);
           curr++;
           if (curr < message.length)
-              window.setTimeout(write, 50);
+              window.setTimeout(write, 30);
       };
       // Read the message from the data attribute.
-      const button = this.querySelector('button');
-      button?.addEventListener('click', () => {
+      if (targetid === 'Undefined'){
         Write();
-      });
+      }
+      else{
+        const button = document.getElementById(targetid);
+        button?.addEventListener('click', () => {
+        button.style.display = "none";
+        
+        Write();
+        });
+      }
+        
     }
   }
 
   customElements.define('slow-text', SlowText);
 </script>
+
+<style>
+    .button{
+        background: #2e2e2e;
+        padding: 6px;
+        color: #fff;
+        margin-bottom: 30px;
+        width: 50%;
+        font-size: 24px;
+        box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff1f, inset 0px -5px #00000030;
+        cursor: pointer;
+        margin: auto;
+    }
+    .button:active{
+        transform: translateY(5px);
+        box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px #00000038;
+    }
+    slow-text{
+        text-align: center;
+        margin: auto;
+    }
+</style>

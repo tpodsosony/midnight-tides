@@ -1,0 +1,29 @@
+---
+const {buttonTxt = 'Undefined', id: idName, ...rest} = Astro.props;
+import '../styles/jackfrost.css';
+
+---
+<div class = "button" id = {idName} {...rest}>
+    {buttonTxt}
+</div>
+<slot />
+
+<style>
+    .button{
+        background: #2e2e2e;
+        padding: 6px;
+        color: #fff;
+        margin-bottom: 30px;
+        width: 50%;
+        font-size: 24px;
+        box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff1f, inset 0px -5px #00000030;
+        cursor: pointer;
+        margin: auto;
+    }
+    .button:active{
+        transform: translateY(5px);
+        box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px #00000038;
+    }
+
+</style>
+

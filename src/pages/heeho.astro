@@ -1,5 +1,12 @@
 ---
+import '../styles/jackfrost.css';
+
 import SlowText from '../components/slowText.astro';
+import JackFrost from '../assets/jackFrost/JFSprite.gif';
+import DialogueButton from '../components/dialogueButton.astro';
+
+const dialogueFistbump = ["fistbump", "no"];
+
 ---
 <!doctype html>
 <html lang="en">
@@ -10,14 +17,52 @@ import SlowText from '../components/slowText.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Hee-Ho!</title>
 	</head>
+	
 <body>
     <div class = "container">
-        Hello this is a test
-
-        <SlowText/>
+        <img src={JackFrost.src} alt = "this is an image" class = "jfGif"/>
+        <br/>
+        <div class ="textBox">
+            <SlowText message = "I've been mea-hee-ning to get to know you better! Put 'er there, ho! "/>
+            <SlowText message = "(You shook hands with the demon... A piece of paper was left in your hand. It says, 'Sucker!') ", id= "heeho!", targetid = {dialogueFistbump[0]}/>
+            <SlowText message = "Do you have a heart of stone or something? Who wouldn't wanna shake hands with me, ho!? Maybe this will get you to open up, ho.", id = "tags", targetid = {dialogueFistbump[1]}/>
+        </div>
+        <DialogueButton buttonTxt = 'Sure', id = {dialogueFistbump[0]}>
+        </DialogueButton>
+        <DialogueButton buttonTxt = 'Let&apos;s not.', id = {dialogueFistbump[1]}>
+        </DialogueButton>
 
     </div>
 </body>
+
+<script>
+function hideDialogue() {
+    var options = document.querySelectorAll('.button');
+    options.forEach(options => {
+          options.style.display = 'none';
+      });
+    var text = document.getElementById('Undefined');
+    text.remove();
+    
+}
+
+let elements = document.querySelectorAll('.button');
+
+elements.forEach((item) => {
+    item.addEventListener('click', () => {
+      hideDialogue();
+      if (item == elements[0])
+        setTimeout('location.assign("/blog/1")', 6000);
+      if (item == elements[1])
+      {
+        var text = document.getElementById('fistbump');
+        text.remove();
+        setTimeout('location.assign("/jackfrost")', 6000);     
+      }
+        
+    })
+});
+</script>
 
 <style>
     body{
@@ -27,25 +72,45 @@ import SlowText from '../components/slowText.astro';
 
     div.container {
     
-    	border-radius: 5px;
-    	border: solid;
-    	border-color: rgba(232, 42, 211, 0.54);
-    	border-width: 2px;
-    	margin:auto;
-    	padding: 1%;
-    	width: 50%;
+	border-radius: 5px;
+	border: solid;
+	border-color: rgba(232, 42, 211, 0.54);
+	border-width: 2px;
+	margin:auto;
+	padding: 1%;
+	width: 50%;
         color:antiquewhite;
-    	justify-content: center;
-    	background-color:#28243d;
-    	font-family: 'SMT-Devil-Survivor', serif;
-    	font-size: clamp(12px, 3vw, 15px);
+	justify-content: center;
+	background-color:#28243d;
     }
 
-    @font-face {
-      font-family: 'SMT-Devil-Survivor';
-      src: url('/fonts/SMT-Devil-Survivor.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    img{
+        display: block;
+        margin:auto;
     }
+    .container{
+        text-align: center;
+    }
+    .textBox{
+        text-align: left;
+        border: solid;
+        border-color: white;
+        width: 70%;
+        height: 4em;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 1000px) {
+    .textBox {
+            width: 100%;
+            height: 8em;
+    }
+    div.container{
+        width: 85%;
+    }
+    }
+        
+
 </style>
+</html>

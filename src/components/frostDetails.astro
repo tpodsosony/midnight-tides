@@ -1,0 +1,63 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+   name: string;
+   titleColor: string;
+}
+
+const { imagePath, altText, name, titleColor} = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/jackFrost/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+
+<div>
+    <details>
+        <summary> <Image src={images[imagePath]()} alt={altText} class="frostImage" /> </summary>
+        <h3>{name}</h3>
+        <p><slot/></p>
+        
+    </details>
+</div>
+
+
+<style>
+.frostImage{
+    width: 10em;
+    height: 10em;
+}
+
+div{
+    border: double thick white;
+    
+    background: #020130;
+    background: linear-gradient(98deg, rgba(2, 1, 48, 1) 0%, rgba(9, 0, 107, 1) 49%, rgba(33, 29, 0, 1) 100%);
+    width: 11em;
+    height: fit-content;
+}
+
+summary{
+    list-style-type: none;
+}
+
+details{
+    display:flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    justify-content: center;
+    text-align: center 
+}
+
+p{
+    /*width:fit-content;*/
+    margin: auto;
+}
+
+h3{
+    color: titleColor;
+        
+}
+</style>
